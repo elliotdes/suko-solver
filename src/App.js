@@ -68,20 +68,32 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Suko Solver</h1>
+      </header>
+      <div className="grid-container">
         <Grid
           grid={grid}
           colors={colors}
           onChange={handleChange}
           onColorChange={handleColorChange}
         ></Grid>
-      </header>
-      <Sum
-        color="#FFA07A"
-        initialValue={orangeSum}
-        onChange={handleSumChange}
-      />
-      <Sum color="#87CEFA" initialValue={blueSum} onChange={handleSumChange} />
-      <Sum color="#7FFFAA" initialValue={greenSum} onChange={handleSumChange} />
+      </div>
+      <div className="sum-container">
+        <Sum
+          color="#FFA07A"
+          initialValue={orangeSum}
+          onChange={handleSumChange}
+        />
+        <Sum
+          color="#87CEFA"
+          initialValue={blueSum}
+          onChange={handleSumChange}
+        />
+        <Sum
+          color="#7FFFAA"
+          initialValue={greenSum}
+          onChange={handleSumChange}
+        />
+      </div>
     </div>
   );
 }
