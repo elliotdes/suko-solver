@@ -18,7 +18,7 @@ function Square({ value, color, row, col, onChange, onColorChange }) {
   return (
     <div style={{ backgroundColor: color }} onContextMenu={openColorPicker}>
       <input
-        type="text"
+        type="number"
         value={value}
         onChange={handleChange}
         style={{
