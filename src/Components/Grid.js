@@ -10,8 +10,13 @@ function Square({ value, color, row, col, onChange, onColorChange }) {
     onColorChange(row, col, e.target.value);
   };
 
+  const openColorPicker = (e) => {
+    e.preventDefault();
+    // code to open color picker or predefined color menu here
+  };
+
   return (
-    <div style={{ backgroundColor: color }}>
+    <div style={{ backgroundColor: color }} onContextMenu={openColorPicker}>
       <input
         type="text"
         value={value}
