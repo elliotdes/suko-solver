@@ -1,22 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import "./App.css";
+import Grid from "./Components/Grid";
 
 function App() {
+  const [grid, setGrid] = useState([
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
+  ]);
+  const [colors, setColors] = useState([
+    ["#FFA07A", "#87CEFA", "#7FFFAA"],
+    ["#87CEFA", "#FFA07A", "#7FFFAA"],
+    ["#7FFFAA", "#87CEFA", "#FFA07A"],
+  ]);
+
+  const handleChange = (row, col, value) => {
+    const newGrid = [...grid];
+    newGrid[row][col] = value;
+    setGrid(newGrid);
+  };
+
+  const handleColorChange = (row, col, color) => {
+    const newColors = [...colors];
+    newColors[row][col] = color;
+    setColors(newColors);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Suko Solver</h1>
+        <Grid
+          grid={grid}
+          colors={colors}
+          onChange={handleChange}
+          onColorChange={handleColorChange}
+        ></Grid>
       </header>
     </div>
   );
