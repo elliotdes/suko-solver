@@ -1,5 +1,7 @@
 const QuadSum = (props) => {
-  const handleChange = (e) => {};
+  const handleChange = (e, i, j) => {
+    props.onChange(i, j, e.target.value);
+  };
 
   return (
     <table className="quad-sums">
