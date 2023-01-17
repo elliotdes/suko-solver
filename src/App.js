@@ -11,17 +11,17 @@ function App() {
     [0, 0, 0],
   ]);
   const [quad, setQuad] = useState([
-    [0, 0],
-    [0, 0],
+    [14, 18],
+    [18, 18],
   ]);
   const [colors, setColors] = useState([
-    ["#FFA07A", "#87CEFA", "#7FFFAA"],
-    ["#87CEFA", "#FFA07A", "#7FFFAA"],
-    ["#7FFFAA", "#87CEFA", "#FFA07A"],
+    ["#7FFFAA", "#7FFFAA", "#7FFFAA"],
+    ["#7FFFAA", "#87CEFA", "#87CEFA"],
+    ["#FFA07A", "#FFA07A", "#87CEFA"],
   ]);
+  const [greenSum, setGreenSum] = useState(22);
+  const [blueSum, setBlueSum] = useState(13);
   const [orangeSum, setOrangeSum] = useState(10);
-  const [blueSum, setBlueSum] = useState(20);
-  const [greenSum, setGreenSum] = useState(30);
   const [selectedColor, setSelectedColor] = useState(null);
 
   const colorSum = {
@@ -99,8 +99,8 @@ function App() {
       </div>
       <div className="sum-container">
         <Sum
-          color="#FFA07A"
-          initialValue={orangeSum}
+          color="#7FFFAA"
+          initialValue={greenSum}
           onChange={handleSumChange}
           onClick={handleColorSumClick}
         />
@@ -111,8 +111,8 @@ function App() {
           onClick={handleColorSumClick}
         />
         <Sum
-          color="#7FFFAA"
-          initialValue={greenSum}
+          color="#FFA07A"
+          initialValue={orangeSum}
           onChange={handleSumChange}
           onClick={handleColorSumClick}
         />
