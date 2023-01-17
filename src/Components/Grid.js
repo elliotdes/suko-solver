@@ -1,22 +1,17 @@
 import React from "react";
 
-function Square({ value, color, row, col, onChange, onColorChange }) {
+function Square({ value, color, row, col, onChange, onColorChange, onClick }) {
   const handleChange = (e) => {
     const value = e.target.value;
     onChange(row, col, value);
   };
 
-  const handleColorChange = (e) => {
-    onColorChange(row, col, e.target.value);
-  };
-
-  const openColorPicker = (e) => {
-    e.preventDefault();
-    // code to open color picker or predefined color menu here
+  const handleClick = () => {
+    onClick(row, col);
   };
 
   return (
-    <td onContextMenu={openColorPicker}>
+    <td onClick={handleClick}>
       <input
         className="square"
         type="number"
@@ -26,11 +21,6 @@ function Square({ value, color, row, col, onChange, onColorChange }) {
           backgroundColor: color,
         }}
       />
-      {/* <select value={color} onChange={handleColorChange}>
-        <option value="#FFA07A">pastel-orange</option>
-        <option value="#87CEFA">pastel-blue</option>
-        <option value="#7FFFAA">pastel-green</option>
-      </select> */}
     </td>
   );
 }
@@ -49,7 +39,7 @@ const Grid = (props) => {
                 row={i}
                 col={j}
                 onChange={props.onChange}
-                onColorChange={props.onColorChange}
+                onClick={props.onClick}
               />
             ))}
           </tr>

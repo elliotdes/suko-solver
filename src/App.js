@@ -58,13 +58,6 @@ function App() {
     setQuad(newQuad);
   };
 
-  const handleColorChange = (row, col, color) => {
-    const newColors = [...colors];
-    newColors[row][col] = color;
-    setColors(newColors);
-    checkSum(grid, color, colorSum[color]);
-  };
-
   const handleSumChange = (color, newValue) => {
     if (color === "#FFA07A") {
       setOrangeSum(newValue);
@@ -77,8 +70,17 @@ function App() {
   };
 
   const handleColorSumClick = (color) => {
-    console.log(color);
     setSelectedColor(color);
+  };
+
+  const handleSquareClick = (row, col) => {
+    if (selectedColor) {
+      const newColors = [...colors];
+      newColors[row][col] = selectedColor;
+      setColors(newColors);
+      checkSum(grid, selectedColor, colorSum[selectedColor]);
+      setSelectedColor(null);
+    }
   };
 
   return (
@@ -91,7 +93,7 @@ function App() {
           grid={grid}
           colors={colors}
           onChange={handleChange}
-          onColorChange={handleColorChange}
+          onClick={handleSquareClick}
         ></Grid>
       </div>
       <div className="sum-container">
