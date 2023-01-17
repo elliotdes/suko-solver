@@ -95,6 +95,7 @@ function App() {
           onChange={handleChange}
           onClick={handleSquareClick}
         ></Grid>
+        <QuadSum onChange={handleQuadChange} quads={quad} />
       </div>
       <div className="sum-container">
         <Sum
@@ -116,7 +117,6 @@ function App() {
           onClick={handleColorSumClick}
         />
       </div>
-      <QuadSum onChange={handleQuadChange} quads={quad} />
     </div>
   );
 }

@@ -21,9 +21,9 @@ div {
 
 
 .square {
-  width: 50px;
-  height: 50px;
-  font-size: 20px;
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
   border: 1px solid white;
   text-align: center;
   padding: 5px;
@@ -40,6 +40,7 @@ div {
 .grid-container {
   justify-content: center;
   align-items: center;
+  position: relative;
   /* padding: 40px 0; */
 }
 
@@ -61,16 +62,20 @@ div {
 }
 
 .quad-sums {
-  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* margin: 0 auto; */
 }
 
 .quad-sum-input {
-  width: 50px;
-  height: 50px;
+  width: 30px;
+  height: 30px;
   border-radius: 100px;
   padding: 5px;
-  margin: 5px;
-  font-size: 20px;
+  margin: 20px;
+  font-size: 15px;
   text-align: center;
 }
 
