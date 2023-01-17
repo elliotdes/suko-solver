@@ -3,21 +3,22 @@ const QuadSum = (props) => {
 
   return (
     <table className="quad-sums">
-      {props.quads.map((row, i) => (
-        <tr key={i}>
-          {row.map((col, j) => (
-            <td>
-              <input
-                className="quad-sum-input"
-                key={j}
-                type="number"
-                value={col}
-                onChange={(e) => handleChange(e, i, j)}
-              />
-            </td>
-          ))}
-        </tr>
-      ))}
+      <tbody>
+        {props.quads.map((row, i) => (
+          <tr key={i}>
+            {row.map((col, j) => (
+              <td key={j}>
+                <input
+                  className="quad-sum-input"
+                  type="number"
+                  value={col}
+                  onChange={(e) => handleChange(e, i, j)}
+                />
+              </td>
+            ))}
+          </tr>
+        ))}
+      </tbody>
     </table>
   );
 };
