@@ -1,6 +1,6 @@
 import React from "react";
 
-function Square({ value, color, row, col, onChange, onColorChange, onClick }) {
+function Square({ value, color, row, col, onChange, onClick }) {
   const handleChange = (e) => {
     const value = e.target.value;
     onChange(row, col, value);
