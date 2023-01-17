@@ -40,7 +40,7 @@ div {
 .grid-container {
   justify-content: center;
   align-items: center;
-  position: relative;
+  /* position: relative; */
   /* padding: 40px 0; */
 }
 
@@ -61,20 +61,50 @@ div {
   /* margin-top: 40px; */
 }
 
-.quad-sums {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* margin: 0 auto; */
-}
-
-.quad-sum-input {
+.nw {
+  position: relative;
+  bottom: 225px;
+  left: 18px;
   width: 30px;
   height: 30px;
   border-radius: 100px;
   padding: 5px;
-  margin: 20px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.ne {
+  position: relative;
+  bottom: 225px;
+  left: 72px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.se {
+  position: relative;
+  bottom: 126px;
+  right: 72px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  padding: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.sw {
+  position: relative;
+  bottom: 126px;
+  right: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 100px;
+  padding: 5px;
   font-size: 15px;
   text-align: center;
 }

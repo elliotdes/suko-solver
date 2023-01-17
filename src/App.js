@@ -95,7 +95,30 @@ function App() {
           onChange={handleChange}
           onClick={handleSquareClick}
         ></Grid>
-        <QuadSum onChange={handleQuadChange} quads={quad} />
+        <QuadSum
+          className="nw"
+          onChange={handleQuadChange}
+          quads={quad}
+          coords={[0, 0]}
+        />
+        <QuadSum
+          className="ne"
+          onChange={handleQuadChange}
+          quads={quad}
+          coords={[1, 0]}
+        />
+        <QuadSum
+          className="se"
+          onChange={handleQuadChange}
+          quads={quad}
+          coords={[0, 1]}
+        />
+        <QuadSum
+          className="sw"
+          onChange={handleQuadChange}
+          quads={quad}
+          coords={[1, 1]}
+        />
       </div>
       <div className="sum-container">
         <Sum
