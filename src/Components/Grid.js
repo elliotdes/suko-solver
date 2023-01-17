@@ -26,11 +26,11 @@ function Square({ value, color, row, col, onChange, onColorChange }) {
           backgroundColor: color,
         }}
       />
-      <select value={color} onChange={handleColorChange}>
+      {/* <select value={color} onChange={handleColorChange}>
         <option value="#FFA07A">pastel-orange</option>
         <option value="#87CEFA">pastel-blue</option>
         <option value="#7FFFAA">pastel-green</option>
-      </select>
+      </select> */}
     </td>
   );
 }

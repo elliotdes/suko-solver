@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Sum = ({ color, initialValue, onChange }) => {
+const Sum = ({ color, initialValue, onChange, onClick }) => {
   const [value, setValue] = useState(initialValue);
 
   const handleChange = (e) => {
@@ -9,12 +9,17 @@ const Sum = ({ color, initialValue, onChange }) => {
     onChange(color, newValue);
   };
 
+  const handleClick = () => {
+    onClick(color);
+  };
+
   return (
     <input
       className="sum"
       type="number"
       value={value}
       onChange={handleChange}
+      onClick={handleClick}
       style={{
         backgroundColor: color,
       }}

@@ -22,6 +22,7 @@ function App() {
   const [orangeSum, setOrangeSum] = useState(10);
   const [blueSum, setBlueSum] = useState(20);
   const [greenSum, setGreenSum] = useState(30);
+  const [selectedColor, setSelectedColor] = useState(null);
 
   const colorSum = {
     "#FFA07A": orangeSum,
@@ -75,6 +76,11 @@ function App() {
     checkSum(grid, color, newValue);
   };
 
+  const handleColorSumClick = (color) => {
+    console.log(color);
+    setSelectedColor(color);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -93,16 +99,19 @@ function App() {
           color="#FFA07A"
           initialValue={orangeSum}
           onChange={handleSumChange}
+          onClick={handleColorSumClick}
         />
         <Sum
           color="#87CEFA"
           initialValue={blueSum}
           onChange={handleSumChange}
+          onClick={handleColorSumClick}
         />
         <Sum
           color="#7FFFAA"
           initialValue={greenSum}
           onChange={handleSumChange}
+          onClick={handleColorSumClick}
         />
       </div>
       <QuadSum onChange={handleQuadChange} quads={quad} />
