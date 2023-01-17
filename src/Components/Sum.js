@@ -10,26 +10,15 @@ const Sum = ({ color, initialValue, onChange }) => {
   };
 
   return (
-    <div
+    <input
+      className="sum"
+      type="number"
+      value={value}
+      onChange={handleChange}
       style={{
-        width: "100px",
-        height: "50px",
-        display: "inline-block",
+        backgroundColor: color,
       }}
-    >
-      <input
-        type="number"
-        value={value}
-        onChange={handleChange}
-        style={{
-          backgroundColor: color,
-          width: "50px",
-          height: "50px",
-          fontSize: "20px",
-          textAlign: "center",
-        }}
-      />
-    </div>
+    />
   );
 };
 

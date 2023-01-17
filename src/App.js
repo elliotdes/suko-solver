@@ -2,12 +2,17 @@ import React, { useState } from "react";
 import "./App.css";
 import Grid from "./Components/Grid";
 import Sum from "./Components/Sum";
+import QuadSum from "./Components/QuadSum";
 
 function App() {
   const [grid, setGrid] = useState([
     [0, 0, 0],
     [0, 0, 0],
     [0, 0, 0],
+  ]);
+  const [quad, setQuad] = useState([
+    [0, 0],
+    [0, 0],
   ]);
   const [colors, setColors] = useState([
     ["#FFA07A", "#87CEFA", "#7FFFAA"],
@@ -44,6 +49,12 @@ function App() {
     setGrid(newGrid);
     const color = colors[row][col];
     checkSum(newGrid, color, colorSum[color]);
+  };
+
+  const handleQuadChange = (row, col, value) => {
+    const newQuad = [...quad];
+    newQuad[row][col] = value;
+    setQuad(newQuad);
   };
 
   const handleColorChange = (row, col, color) => {
@@ -94,6 +105,7 @@ function App() {
           onChange={handleSumChange}
         />
       </div>
+      <QuadSum onChange={handleQuadChange} quads={quad} />
     </div>
   );
 }

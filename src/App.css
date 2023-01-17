@@ -7,6 +7,10 @@ body {
   text-align: center;
 }
 
+div {
+  border: 1px solid white;
+}
+
 .App-header {
   display: flex;
   flex-direction: column;
@@ -15,40 +19,28 @@ body {
   font-size: calc(10px + 2vmin);
 }
 
-h1 {
-  margin: 0;
-}
-
-.grid-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 0;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  width: 150px;
-  height: 150px;
-  /* border: 1px solid white; */
-  padding: 10px;
-}
 
 .square {
-  width: 33px;
-  height: 33px;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
   border: 1px solid white;
   text-align: center;
   padding: 5px;
 }
 
-.sum-container {
-  display: flex;
+.grid {
+  /* width: 150px; */
+  /* height: 150px; */
+  /* border: 1px solid white; */
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.grid-container {
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
+  /* padding: 40px 0; */
 }
 
 .sum {
@@ -57,6 +49,28 @@ h1 {
   border-radius: 10px;
   padding: 5px;
   margin: 5px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.sum-container {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 40px; */
+}
+
+.quad-sums {
+  margin: 0 auto;
+}
+
+.quad-sum-input {
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  padding: 5px;
+  margin: 5px;
+  font-size: 20px;
   text-align: center;
 }
 
