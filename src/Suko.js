@@ -40,8 +40,30 @@ function checkQuadSums(grid, quad) {
   return true;
 }
 
+function checkUniqueGrid(grid) {
+  // create a set to store unique elements
+  const arr = grid.flat();
+  let uniqueElements = new Set();
+  for (let i = 0; i < arr.length; i++) {
+    // check if element is between 1 and 9
+    if (arr[i] < 1 || arr[i] > 9) {
+      console.log("not 1-9");
+      return false;
+    }
+    if (uniqueElements.has(arr[i])) {
+      return false;
+    }
+    uniqueElements.add(arr[i]);
+  }
+  return true;
+}
+
 export default function checkSums(grid, colors, quad, colorSums) {
-  if (checkColorSums(grid, colors, colorSums) && checkQuadSums(grid, quad)) {
+  if (
+    checkUniqueGrid(grid) &&
+    checkColorSums(grid, colors, colorSums) &&
+    checkQuadSums(grid, quad)
+  ) {
     return true;
   } else {
     return false;

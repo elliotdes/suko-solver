@@ -33,7 +33,7 @@ function App() {
 
   const handleChange = (row, col, value) => {
     const newGrid = [...grid];
-    newGrid[row][col] = value;
+    newGrid[row][col] = value === "" ? "" : parseInt(value);
     setGrid(newGrid);
   };
 
