@@ -47,7 +47,6 @@ function checkUniqueGrid(grid) {
   for (let i = 0; i < arr.length; i++) {
     // check if element is between 1 and 9
     if (arr[i] < 1 || arr[i] > 9) {
-      console.log("not 1-9");
       return false;
     }
     if (uniqueElements.has(arr[i])) {
