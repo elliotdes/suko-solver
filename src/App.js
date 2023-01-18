@@ -3,25 +3,26 @@ import "./App.css";
 import Grid from "./Components/Grid";
 import Sum from "./Components/Sum";
 import QuadSum from "./Components/QuadSum";
+import checkSums from "./Suko";
 
 function App() {
   const [grid, setGrid] = useState([
-    [0, 0, 0],
-    [0, 0, 0],
-    [0, 0, 0],
+    [8, 2, 4],
+    [1, 6, 3],
+    [9, 5, 7],
   ]);
   const [quad, setQuad] = useState([
-    [14, 18],
-    [18, 18],
+    [17, 15],
+    [21, 21],
   ]);
   const [colors, setColors] = useState([
+    ["#FFA07A", "#87CEFA", "#87CEFA"],
+    ["#FFA07A", "#87CEFA", "#7FFFAA"],
     ["#7FFFAA", "#7FFFAA", "#7FFFAA"],
-    ["#7FFFAA", "#87CEFA", "#87CEFA"],
-    ["#FFA07A", "#FFA07A", "#87CEFA"],
   ]);
-  const [greenSum, setGreenSum] = useState(22);
-  const [blueSum, setBlueSum] = useState(13);
-  const [orangeSum, setOrangeSum] = useState(10);
+  const [greenSum, setGreenSum] = useState(24);
+  const [blueSum, setBlueSum] = useState(12);
+  const [orangeSum, setOrangeSum] = useState(9);
   const [selectedColor, setSelectedColor] = useState(null);
 
   const colorSum = {
@@ -30,26 +31,10 @@ function App() {
     "#7FFFAA": greenSum,
   };
 
-  const checkSum = (grid, color, desiredSum) => {
-    let sum = 0;
-    for (let i = 0; i < grid.length; i++) {
-      for (let j = 0; j < grid[i].length; j++) {
-        if (colors[i][j] === color) {
-          sum += Number(grid[i][j]);
-        }
-      }
-    }
-    if (sum > desiredSum) {
-      console.log(`The sum of the ${color} group exceeds the desired sum`);
-    }
-  };
-
   const handleChange = (row, col, value) => {
     const newGrid = [...grid];
     newGrid[row][col] = value;
     setGrid(newGrid);
-    const color = colors[row][col];
-    checkSum(newGrid, color, colorSum[color]);
   };
 
   const handleQuadChange = (row, col, value) => {
@@ -66,7 +51,6 @@ function App() {
     } else if (color === "#7FFFAA") {
       setGreenSum(newValue);
     }
-    checkSum(grid, color, newValue);
   };
 
   const handleColorSumClick = (color) => {
@@ -78,7 +62,6 @@ function App() {
       const newColors = [...colors];
       newColors[row][col] = selectedColor;
       setColors(newColors);
-      checkSum(grid, selectedColor, colorSum[selectedColor]);
       setSelectedColor(null);
     }
   };
