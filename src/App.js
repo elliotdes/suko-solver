@@ -129,6 +129,7 @@ function App() {
       </div>
       <div>
         <button onClick={handleClick}>Check</button>
+        <button>Solve</button>
       </div>
     </div>
   );
