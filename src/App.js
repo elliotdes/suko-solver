@@ -83,6 +83,10 @@ function App() {
     }
   };
 
+  const handleClick = () => {
+    console.log(checkSums(grid, colors, quad, colorSum));
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -139,6 +143,9 @@ function App() {
           onChange={handleSumChange}
           onClick={handleColorSumClick}
         />
+      </div>
+      <div>
+        <button onClick={handleClick}>Check</button>
       </div>
     </div>
   );
