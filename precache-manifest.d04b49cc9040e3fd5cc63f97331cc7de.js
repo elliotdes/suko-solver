@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "8aa2833392a33fc9a767",
+    "revision": "b2aef612b4ace388bcf8",
     "url": "/suko-solver/static/css/main.58a88d0a.chunk.css"
   },
   {
-    "revision": "8aa2833392a33fc9a767",
-    "url": "/suko-solver/static/js/main.0e04e386.chunk.js"
+    "revision": "b2aef612b4ace388bcf8",
+    "url": "/suko-solver/static/js/main.7088760f.chunk.js"
   },
   {
     "revision": "6817442db8f370884db8",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/suko-solver/static/js/3.d7f7bd74.chunk.js"
   },
   {
-    "revision": "c2f1cba7cd84566c86418a92e87c9a36",
+    "revision": "f94116130dc95ffb5f841e571918235b",
     "url": "/suko-solver/index.html"
   }
 ];

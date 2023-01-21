@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/suko-solver/precache-manifest.cb86ab0e437d90d7fb7697da076d9cba.js"
+  "/suko-solver/precache-manifest.d04b49cc9040e3fd5cc63f97331cc7de.js"
 );
 
 workbox.clientsClaim();
