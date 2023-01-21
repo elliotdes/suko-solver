@@ -84,7 +84,7 @@ function getPermutations(arr) {
 
 // Exports
 
-export function checkSums(grid, colors, quad, colorSums) {
+export function checkSolution(grid, colors, quad, colorSums) {
   if (
     checkUniqueGrid(grid) &&
     checkColorSums(grid, colors, colorSums) &&
@@ -100,7 +100,7 @@ export function getSolution(colors, quad, colorSums) {
   const options = getPermutations([1, 2, 3, 4, 5, 6, 7, 8, 9]);
   for (let i = 0; i < options.length; i++) {
     const possible_grid = convertTo3x3(options[i]);
-    if (checkSums(possible_grid, colors, quad, colorSums)) {
+    if (checkSolution(possible_grid, colors, quad, colorSums)) {
       return possible_grid;
     }
   }
