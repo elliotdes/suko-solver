@@ -1,3 +1,5 @@
+// Checking
+
 function checkColorSums(grid, colors, colorSums) {
   let orangeSum = 0;
   let blueSum = 0;
@@ -57,7 +59,32 @@ function checkUniqueGrid(grid) {
   return true;
 }
 
-export default function checkSums(grid, colors, quad, colorSums) {
+// Solving
+
+function convertTo3x3(arr) {
+  return [arr.slice(0, 3), arr.slice(3, 6), arr.slice(6)];
+}
+
+function getPermutations(arr) {
+  let permutations = [];
+  function permute(arr, m = []) {
+    if (arr.length === 0) {
+      permutations.push(m);
+    } else {
+      for (let i = 0; i < arr.length; i++) {
+        let curr = arr.slice();
+        let next = curr.splice(i, 1);
+        permute(curr.slice(), m.concat(next));
+      }
+    }
+  }
+  permute(arr);
+  return permutations;
+}
+
+// Exports
+
+export function checkSums(grid, colors, quad, colorSums) {
   if (
     checkUniqueGrid(grid) &&
     checkColorSums(grid, colors, colorSums) &&
@@ -67,4 +94,15 @@ export default function checkSums(grid, colors, quad, colorSums) {
   } else {
     return false;
   }
+}
+
+export function getSolution(colors, quad, colorSums) {
+  const options = getPermutations([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+  for (let i = 0; i < options.length; i++) {
+    const possible_grid = convertTo3x3(options[i]);
+    if (checkSums(possible_grid, colors, quad, colorSums)) {
+      return possible_grid;
+    }
+  }
+  return false;
 }

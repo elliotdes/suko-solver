@@ -3,7 +3,7 @@ import "./App.css";
 import Grid from "./Components/Grid";
 import Sum from "./Components/Sum";
 import QuadSum from "./Components/QuadSum";
-import checkSums from "./Suko";
+import { checkSums, getSolution } from "./Suko";
 
 function App() {
   const [grid, setGrid] = useState([
@@ -67,7 +67,21 @@ function App() {
   };
 
   const handleClick = () => {
-    console.log(checkSums(grid, colors, quad, colorSum));
+    const check = checkSums(grid, colors, quad, colorSum);
+    if (check) {
+      alert("That is correct!");
+    } else {
+      alert("That is incorrect.");
+    }
+  };
+
+  const handleSolve = () => {
+    const solution = getSolution(colors, quad, colorSum);
+    if (solution) {
+      setGrid(solution);
+    } else {
+      alert("No solution found!");
+    }
   };
 
   return (
@@ -129,7 +143,7 @@ function App() {
       </div>
       <div>
         <button onClick={handleClick}>Check</button>
-        <button>Solve</button>
+        <button onClick={handleSolve}>Solve</button>
       </div>
     </div>
   );
