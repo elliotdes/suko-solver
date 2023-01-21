@@ -1,3 +1,5 @@
+import React from "react";
+
 const QuadSum = (props) => {
   const handleChange = (e) => {
     props.onChange(props.coords[1], props.coords[0], e.target.value);
