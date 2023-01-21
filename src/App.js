@@ -39,11 +39,12 @@ function App() {
 
   const handleQuadChange = (row, col, value) => {
     const newQuad = [...quad];
-    newQuad[row][col] = value;
+    newQuad[row][col] = value === "" ? "" : parseInt(value);
     setQuad(newQuad);
   };
 
-  const handleSumChange = (color, newValue) => {
+  const handleSumChange = (color, value) => {
+    const newValue = value === "" ? "" : parseInt(value);
     if (color === "#FFA07A") {
       setOrangeSum(newValue);
     } else if (color === "#87CEFA") {
