@@ -7,9 +7,9 @@ import { checkSolution, getSolution } from "./Suko";
 
 function App() {
   const [grid, setGrid] = useState([
-    [8, 2, 4],
-    [1, 6, 3],
-    [9, 5, 7],
+    [0, 0, 0],
+    [0, 0, 0],
+    [0, 0, 0],
   ]);
   const [quad, setQuad] = useState([
     [17, 15],
