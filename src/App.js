@@ -83,6 +83,13 @@ function App() {
       alert("No solution found!");
     }
   };
+  const handleReset = () => {
+    setGrid([
+      [0, 0, 0],
+      [0, 0, 0],
+      [0, 0, 0],
+    ]);
+  };
 
   return (
     <div className="App">
@@ -144,6 +151,7 @@ function App() {
       <div>
         <button onClick={handleClick}>Check</button>
         <button onClick={handleSolve}>Solve</button>
+        <button onClick={handleReset}>Reset</button>
       </div>
     </div>
   );
