@@ -7,8 +7,8 @@ body {
   text-align: center;
 }
 
-div {
-  border: 1px solid white;
+button {
+  margin: 5px;
 }
 
 .App-header {
