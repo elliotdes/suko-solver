@@ -1,5 +1,7 @@
 # Suko Solver
 
+https://elliotdes.github.io/suko-solver/
+
 Suko is a game where you must use the numbers 1 to 9 to satisty constraints on
 a 3 by 3 grid.
 
